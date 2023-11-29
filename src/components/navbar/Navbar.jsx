@@ -1,31 +1,38 @@
 import React from "react";
 import styles from "./navbar.module.css";
+import Link from "next/link";
 
 function Navbar() {
   const links = [
     {
       id: 1,
       title: "Home",
+      url: '/home'
     },
     {
       id: 2,
       title: "Portfolio",
+      url: '/portfolio'
     },
     {
       id: 3,
       title: "Blog",
+      url: '/blog'
     },
     {
       id: 4,
       title: "About",
+      url: '/about'
     },
     {
       id: 5,
       title: "Contact",
+      url: '/contact'
     },
     {
       id: 6,
       title: "Dashboard",
+      url: '/dashboard'
     },
   ];
 
@@ -35,8 +42,9 @@ function Navbar() {
       <div>Main</div>
       <div className={styles.links}>
         {links.map((link) => (
-          <div>{link.title}</div>
+          <Link href={link.url}>{link.title}</Link>
         ))}
+
       </div>
     </div>
   );
